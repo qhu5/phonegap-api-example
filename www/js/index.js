@@ -31,6 +31,7 @@ app.onDeviceReady = function() {
   app.testCompass();
   // app.testNotification();
   app.testFile();
+  app.testNetwork();
 
   // build on cloud
   // app.testCamera();
@@ -150,5 +151,14 @@ app.testFile = function() {
       logOb = file;
       writeLog("App started");
     });
+  });
+};
+app.testNetwork = function() {
+  console.log(navigator.connection.type);
+  document.addEventListener("online", function() {
+    console.log("online");
+  });
+  document.addEventListener("offline", function() {
+    console.log("offline");
   });
 };

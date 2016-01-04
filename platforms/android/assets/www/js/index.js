@@ -140,7 +140,7 @@ app.testFile = function() {
 
   		var blob = new Blob([log], {type:'text/plain'});
   		fileWriter.write(blob);
-  		console.log("ok, in theory i worked");
+  		console.log("ok, in *theory* i worked");
   	}, fail);
   }
   window.resolveLocalFileSystemURL(cordova.file.dataDirectory, function(dir) {
