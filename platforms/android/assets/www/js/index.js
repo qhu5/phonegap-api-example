@@ -31,6 +31,9 @@ app.onDeviceReady = function() {
   app.testCompass();
   // app.testNotification();
   app.testFile();
+  app.testNetwork();
+  // app.testSplashscreen();
+  // app.testVibrate();
 
   // build on cloud
   // app.testCamera();
@@ -151,4 +154,20 @@ app.testFile = function() {
       writeLog("App started");
     });
   });
+};
+app.testNetwork = function() {
+  console.log(navigator.connection.type);
+  document.addEventListener("online", function() {
+    console.log("online");
+  });
+  document.addEventListener("offline", function() {
+    console.log("offline");
+  });
+};
+// app.testSplashscreen = function() {
+//   navigator.splashscreen.show();
+// };
+app.testVibrate = function() {
+  navigator.vibrate(100);
+  navigator.notification.vibrateWithPattern([0, 100, 100, 200, 100, 400, 100, 800]);
 };
